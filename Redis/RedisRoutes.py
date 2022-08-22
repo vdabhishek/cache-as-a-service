@@ -1,13 +1,13 @@
 from flask import g
 from Redis import redis
 from flask import request, jsonify
-from RedisHandler import Redis
+from Redis.RedisHandler import Redis
 
 @redis.before_request
 def obj():
     g.handler = Redis()
 
-@redis.route('/redis/createamespace', methods=['POST'])
+@redis.route('/redis/createnamespace', methods=['POST'])
 def create_redis_namespace():
     req_json = request.get_json()
     result = g.handler.create_redis_namespace(req_json)

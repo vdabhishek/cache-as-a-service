@@ -1,7 +1,7 @@
 from flask import g
 from Memcached import memcached
 from flask import request, jsonify
-from MemcachedHandler import Memcached
+from Memcached.MemcachedHandler import Memcached
 
 @memcached.before_request
 def obj():
